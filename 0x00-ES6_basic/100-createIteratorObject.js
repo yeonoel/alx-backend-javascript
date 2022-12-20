@@ -6,6 +6,6 @@ export default function createIteratorObject(report) {
       arr.push(emp);
     }
 }
- 
-   return arr;
+
+  return arr;
 }
