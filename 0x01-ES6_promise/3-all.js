@@ -1,10 +1,11 @@
-import {uploadPhoto, createUser} from "./utils";
+import { uploadPhoto, createUser } from "./utils";
 
 export default function handleProfileSignup() {
   let photo = uploadPhoto();
   let user = createUser();
   let lastName;
   let firstName;
+ 
   return Promise.all([photo, user]).then((values) => {
     let body = values[0].body;
     lastName = values[1].lastName;
