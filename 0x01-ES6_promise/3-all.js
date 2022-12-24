@@ -5,7 +5,6 @@ export default function handleProfileSignup() {
   let user = createUser();
   let lastName;
   let firstName;
-
   return Promise.all([photo, user]).then((values) => {
     let body = values[0].body;
     lastName = values[1].lastName;
