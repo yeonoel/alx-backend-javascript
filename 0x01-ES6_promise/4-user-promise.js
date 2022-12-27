@@ -1,6 +1,6 @@
 export default function signUpUser(firstName, lastName) {
-  return Promise.resolve({ fisrtName: firstName, lastName: lastName }).then(
-    (value) => {
-      value;
-    };
+  const object = { firstName: firstName, lastName: lastName };
+  const resolvedPromise = Promise.resolve(object);
+
+  return resolvedPromise.then((value) => value);
 }
