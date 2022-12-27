@@ -6,5 +6,5 @@ export default function handleProfileSignup(firstname, lastname, filename) {
   const photoRejected = uploadPhoto(filename);
   const promises = [userPromise, photoRejected];
   const array = Promise.allSettled(promises);
-  return array.then();
+  return array.then((results) => results);
 }
