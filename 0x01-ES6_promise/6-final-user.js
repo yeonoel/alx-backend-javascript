@@ -1,9 +1,9 @@
-import signUpUser from '4-user-promise';
-import uploadPhoto from '5-photo-reject';
+import signUpUser from './4-user-promise';
+import uploadPhoto from './5-photo-reject';
 
-export default function handleProfileSignup(firstname, lastname, filename) {
-  const userPromise = signUpUser(firstname, lastname);
-  const photoRejected = uploadPhoto(filename);
+export default function handleProfileSignup(firstName, lastName, fileName) {
+  const userPromise = signUpUser(firstName, lastName);
+  const photoRejected = uploadPhoto(fileName);
   const promises = [userPromise, photoRejected];
   const array = Promise.allSettled(promises);
   return array.then((results) => {
