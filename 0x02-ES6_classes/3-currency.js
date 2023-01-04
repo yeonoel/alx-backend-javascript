@@ -10,15 +10,13 @@ export default class Currency {
   set code(value) {
     this._code = value;
   }
-
   // name
   get name() {
     return this._name;
   }
   set name(value) {
-    this._name = name;
+    this._name = value;
   }
-
   displayFullCurrency() {
     return `${this._name} (${this._name})`;
   }
