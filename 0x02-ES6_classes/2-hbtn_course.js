@@ -7,7 +7,7 @@ export default class HolbertonCourse {
 
   // name
   get name() {
-    this._name;
+    return this._name;
   }
   set name(value) {
     if (typeof value !== 'string') {
