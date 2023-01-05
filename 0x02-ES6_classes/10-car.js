@@ -6,10 +6,10 @@ export default class Car {
   }
 
   // static method
-  static get [Symbol.species]() { return this };
+  static get [Symbol.species]() { return this; }
 
   // method
   cloneCar() {
-    return new this.constructor[Symbole.species]();
+    return new this.constructor[Symbol.species]();
   }
 }
