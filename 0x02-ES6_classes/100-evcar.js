@@ -6,9 +6,8 @@ export default class EVCar extends Car {
     this._range = range;
   }
 
-  
-  // mothod
-  cloneCar() {
+  // eslint-disable-next-line
+  	cloneCar() {
     return new Car[Symbol.species]();
   }
 }
