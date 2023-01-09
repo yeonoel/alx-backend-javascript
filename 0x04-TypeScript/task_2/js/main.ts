@@ -51,3 +51,28 @@ export function createEmployee(salary: string | number): Teacher | Director  {
   }
   return new Director();
 }
+
+export function isDirector(employee: Teacher | Director) {
+  return employee instanceof Director;
+}
+
+export function executeWork(employee: Teacher | Director) {
+  if (isDirector(employee)) {
+    return employee.workDirectorTasks();
+  }
+
+  return employee.workTeacherTasks();
+}
+
+
+type Subjects = Math | History;
+
+export function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'Math') {
+    return 'Teaching Math';
+  } else if (todayClass === 'History') {
+    return 'Teaching History';
+  } else {
+    throw new Error('Invalid subject');
+  }
+}
