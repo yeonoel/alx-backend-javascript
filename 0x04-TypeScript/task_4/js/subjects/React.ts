@@ -3,7 +3,7 @@ namespace Subjects {
     experienceTeachingReact?: number;
   }
   
-  class React extends Subejects.Suject {
+  class React extends Subjects.Subject {
     getRequirements(): string {
       return 'Here is the list of requirements for React';
     }
