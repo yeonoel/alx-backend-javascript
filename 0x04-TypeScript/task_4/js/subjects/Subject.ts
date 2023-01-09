@@ -1,5 +1,3 @@
-import {Subjects} from './Teacher';
-
 namespace Subjects {
   export class Subject {
     const teacher: Subjects.Teacher;

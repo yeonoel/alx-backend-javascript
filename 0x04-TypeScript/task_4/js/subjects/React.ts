@@ -1,5 +1,3 @@
-
-
 namespace Subjects {
   interface Teacher {
     experienceTeachingReact?: number;

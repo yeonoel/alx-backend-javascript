@@ -1,6 +1,3 @@
-import { Subjects } from './Subject';
-import { Teacher } from './Teacher';
-
 namespace Subjects {
   export interface Teacher {
     experienceTeachingC?: number;
