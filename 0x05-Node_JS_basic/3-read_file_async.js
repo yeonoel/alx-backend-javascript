@@ -1,44 +1,48 @@
 const fs = require('fs');
 
-function countStudents (path) {
+function countStudents(path) {
   return new Promise((resolve, reject) => {
     fs.readFile(path, 'utf8', (err, data) => {
       if (err) {
-        reject(Error('Cannot load the database'));
+        reject(new Error('Cannot load the database'));
         return;
       }
       const response = [];
-      let message;
+      let msg;
 
-      const elems = data.toString().split('\n');
+      const content = data.toString().split('\n');
 
-      let students = elems.filter((item) => item);
+      let students = content.filter((item) => item);
 
       students = students.map((item) => item.split(','));
 
       const NUMBER_OF_STUDENTS = students.length ? students.length - 1 : 0;
-      message = `Number of students: ${NUMBER_OF_STUDENTS}`;
-      console.log(message);
+      msg = `Number of students: ${NUMBER_OF_STUDENTS}`;
+      console.log(msg);
 
-      response.push(message);
+      response.push(msg);
 
       const fields = {};
       for (const i in students) {
         if (i !== 0) {
           if (!fields[students[i][3]]) fields[students[i][3]] = [];
+
           fields[students[i][3]].push(students[i][0]);
         }
       }
+
       delete fields.field;
 
       for (const key of Object.keys(fields)) {
-        message = `Number of students in ${key}: ${
+        msg = `Number of students in ${key}: ${
           fields[key].length
         }. List: ${fields[key].join(', ')}`;
 
-        console.log(message);
+        console.log(msg);
+
+        response.push(msg);
       }
-      response.push(message);
+      resolve(response);
     });
   });
 }
