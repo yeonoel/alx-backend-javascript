@@ -4,7 +4,7 @@ function readDatabase (path) {
   return new Promise((resolve, reject) => {
     fs.reaFile(path, 'utf8', (err, data) => {
       if (err) {
-        reject(new Error(err));
+        reject(Error(err));
         return;
       }
       const elems = data.toString().split('\n');
@@ -25,4 +25,4 @@ function readDatabase (path) {
   });
 }
 
-module.exports = readDatabase;
+export default readDatabase;

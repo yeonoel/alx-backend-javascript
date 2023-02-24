@@ -2,7 +2,7 @@ import express from 'express';
 import AppController from '../controllers/AppController';
 import StudentsController from '../controllers/StudentsController';
 
-function controllerRouting (app) {
+function controllerRouting(app) {
   const router = express.Router();
   app.use('/', router);
 
@@ -14,8 +14,8 @@ function controllerRouting (app) {
     StudentsController.getAllStudents(req, res, process.argv[2]);
   });
 
-  router.get('/students:major', (req, res) => {
-    StudentsController.getAllStudents(req, res, process.argv[2]);
+  router.get('/students/:major', (req, res) => {
+    StudentsController.getAllStudentsByMajor(req, res, process.argv[2]);
   });
 }
 

@@ -1,8 +1,7 @@
 import readDatabase from '../utils';
 
 class StudentsController {
-  getAllStudents (request, response, DATABASE) {
-    response.send(200);
+  static getAllStudents(request, response, DATABASE) {
     readDatabase(DATABASE)
       .then((fields) => {
         const students = [];
@@ -13,7 +12,7 @@ class StudentsController {
         for (const key of Object.keys(fields)) {
           message = `Number of students in ${key}: ${
             fields[key].length
-            } List: ${fields[key].join(', ')}`;
+            }. List: ${fields[key].join(', ')}`;
           students.push(message);
         }
         response.send(200, `${students.join('\n')}`);
@@ -23,7 +22,7 @@ class StudentsController {
       });
   }
 
-  getAllStudentsByMajor (request, response, DATABASE) {
+  static getAllStudentsByMajor(request, response, DATABASE) {
     const { major } = request.params;
 
     if (major !== 'CS' && major !== 'SWE') {
