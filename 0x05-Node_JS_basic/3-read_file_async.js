@@ -31,6 +31,7 @@ function countStudents(path) {
         }
       }
 
+      delete fields.field;
       for (const key of Object.keys(fields)) {
         msg = `Number of students in ${key}: ${
           fields[key].length
