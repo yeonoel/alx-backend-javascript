@@ -8,13 +8,9 @@ function countStudents (path) {
     throw new Error('Cannot load the database');
   }
   elems = elems.toString().split('\n');
-  let students = elems.filter((item) => {
-    return item;
-  });
+  let students = elems.filter((item) => item);
 
-  students = students.map((item) => {
-    return item.split(',');
-  });
+  students = students.map((item) => item.split(','));
 
   const NUMBER_OF_STUDENTS = students.length ? students.length - 1 : 0;
   console.log(`Number of students: ${NUMBER_OF_STUDENTS}`);
