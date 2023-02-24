@@ -1,22 +1,24 @@
 const express = require('express');
 
-const DATABASE = process.argv[2];
+const args = process.argv.slice(2);
 const countStudents = require('./3-read_file_async');
+
+const DATABASE = args[0];
 
 const app = express();
 const port = 1245;
 
 app.get('/', (req, res) => {
-  res.end('Hello Holberton School!');
+  res.send('Hello Holberton School!');
 });
 
 app.get('/students', async (req, res) => {
-  res.write('This is list of our students\n');
+  const msg = 'This is the list of our students\n';
   try {
     const students = await countStudents(DATABASE);
-    res.end(`${students.join('\n')}`);
+    res.send(`${msg}${students.join('\n')}`);
   } catch (error) {
-    res.end(`${error.message}`);
+    res.send(`${msg}${error.message}`);
   }
 });
 
