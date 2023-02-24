@@ -7,16 +7,16 @@ const app = express();
 const port = 1245;
 
 app.get('/', (req, res) => {
-  res.send(200, 'Hello Holberton School!');
+  res.status(200).send('Hello Holberton School!');
 });
 
 app.get('/students', async (req, res) => {
   const message = 'This is list of our students\n';
   try {
     const students = await countStudents(DATABASE);
-    res.send(200, `${message}${students.join('\n')}`);
+    res.status(200).send(`${message}${students.join('\n')}`);
   } catch (error) {
-    res.send(500, `${message}${error.message}`);
+    res.status(400).send(`${message}${error.message}`);
   }
 });
 
