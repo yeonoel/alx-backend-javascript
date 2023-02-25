@@ -23,7 +23,7 @@ describe('Test advanced calculateNumber()', function() {
 
     describe('DIVIDE by 0:', function(){
         it('return Error', function() {
-           chai.expect(calculateNumber('DIVIDE', 1.4, 0)).to.equal('Error');
+           chai.expect(calculateNumber('DIVIDE', 9.4, 0)).to.equal('Error');
         });
     });
 })
