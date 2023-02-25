@@ -1,6 +1,5 @@
 var chai  = require('chai');
 
-const assert  = require('assert');
 const calculateNumber = require('./1-calcul');
 
 describe('Test advanced calculateNumber()', function() {
@@ -16,13 +15,13 @@ describe('Test advanced calculateNumber()', function() {
         });
     });
 
-    describe('DIVIVDE', function(){
+    describe('DIVIDE', function(){
         it('should return 0.2', function() {
            chai.expect(calculateNumber('DIVIDE', 1.4, 4.5)).to.equal(0.2);
         });
     });
 
-    describe('DIVIVDE by 0:', function(){
+    describe('DIVIDE by 0:', function(){
         it('return Error', function() {
            chai.expect(calculateNumber('DIVIDE', 1.4, 0)).to.equal('Error');
         });
