@@ -22,7 +22,7 @@ describe('Test advanced calculateNumber()', function() {
 
     describe('Tests DIVIVDE () with 0:', function(){
         it('return Error', function() {
-            assert.strictEqual(calculateNumber('DIVIDE', 8.3, 0), 'Error')
+            assert.strictEqual(calculateNumber('DIVIDE', 1.4, 0), 'Error')
         })
     })
 })
