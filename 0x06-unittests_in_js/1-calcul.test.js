@@ -19,10 +19,9 @@ describe('DIVIDE', function() {
   it('shouls return Error for divion by 0', function() {
     assert.strictEqual(calculateNumber('DIVIDE', 1.4, 0), 'Error');
   });
-});
 
-describe('DIVIDE by number different than 0', function() {
   it('should return the DIVIDE of two rounded numbers', function() {
     assert.strictEqual(calculateNumber('DIVIDE', 1.4, 4.5), 0.2);
   });
 });
+
