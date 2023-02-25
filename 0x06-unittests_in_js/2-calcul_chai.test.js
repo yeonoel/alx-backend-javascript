@@ -22,7 +22,7 @@ describe('Test calculateNumber with chai', function() {
 
     describe('Tests DIVIVDE with 0:', function(){
         it('should return Error', function() {
-            chai.expect(calculateNumber('DIVIDE', 8.3, 0)).to.equal('Error');
+            chai.expect(calculateNumber('DIVIDE', 1.4, 0)).to.equal('Error');
         });
     });
 });
