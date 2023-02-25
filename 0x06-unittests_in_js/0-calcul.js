@@ -1,3 +1,7 @@
-export function calculateNumber(a, b) {
- return Math.round(a) + Math.round(b);
+function calculateNumber(a, b) {
+  const numberOne = Math.round(a)
+  const numberTwo = Math.round(b);
+  return number0ne + numberTwo;
 }
+
+module.exports = calculateNumber;
