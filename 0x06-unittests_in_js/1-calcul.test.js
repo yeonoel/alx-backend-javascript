@@ -34,7 +34,7 @@ describe('SUBTRACT', function() {
   });
 
   it('should return the SUBTRACT of two rounded numbers', function() {
-    assert.strictEqual(calculateNumber(1.5, 3.7), 2);
+    assert.strictEqual(calculateNumber('SUBTRACT', 1.5, 3.7), 2);
   });
 
   it('should return the SUBTRACT of two rounded numbers', function() {
@@ -42,7 +42,7 @@ describe('SUBTRACT', function() {
   });
 
   it('should return the SUBTRACT of two rounded numbers', function() {
-    assert.strictEqual(calculateNumber(1.2, 3.1), 2);
+    assert.strictEqual(calculateNumber('SUBTRACT', 1.2, 3.1), 2);
   });
 });
 
