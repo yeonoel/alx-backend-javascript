@@ -15,7 +15,7 @@ describe('Spy', function () {
         expect(stubUtils.calledOnceWithExactly('SUM', 100, 20)).to.be.true;
         expect(spyConsole.calledOnceWithExactly('The total is: 10')).to.be.true;
 
-        spyUtils.restore();
+        stubUtils.restore();
         spyConsole.restore();
     });
 });
