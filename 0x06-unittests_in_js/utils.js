@@ -1,21 +1,21 @@
 const Utils = {
-  calculateNumber(type, a, b) {
-    const numberOne = Math.round(a);
-    const numberTwo = Math.round(b);
-
-    if (type === 'SUBTRACT') {
-      return numberOne - numberTwo;
+    calculateNumber(type, a, b) {
+        const first_num = Math.round(a);
+        const second_num = Math.round(b);
+    
+        if (type === 'SUBTRACT') {
+            return first_num - second_num; 
+        }
+        
+        if (type === 'DIVIDE') {
+            if (second_num === 0) {
+                return "Error";
+            }
+            return first_num / second_num;
+        }
+        
+        return first_num + second_num;
     }
-
-    if (type === 'DIVIDE') {
-      if (numberTwo === 0) {
-        return 'Error';
-      }
-     return numberOne / numberTwo;
-    }
-
-    return numberOne + numberTwo;
-  }
-}
-
-module.exports Utils;
+};
+    
+module.exports = Utils;
